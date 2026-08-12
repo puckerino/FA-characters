@@ -1,1 +1,77 @@
+@font-face {
+    font-family: "Selincah";
+    src: url(https://puckerino.github.io/FA-characters/beyond-desolation/dash-darby/assets/selincah.otf);
+}
 
+.dash {
+    --dash-deco: "Selincah";
+    --dash-accent: #9e580c;
+    --dash-accent-dark: color-mix(in srgb, var(--dash-accent), #222 50%);
+    --dash-accent-darker: color-mix(in srgb, var(--dash-accent), #222 80%);
+}
+
+.dash-signature {
+    --dash-deco: "Selincah";
+    --dash-accent: #9e580c;
+    --dash-accent-dark: color-mix(in srgb, var(--dash-accent), #222 50%);
+    --dash-accent-darker: color-mix(in srgb, var(--dash-accent), #222 80%);
+
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    box-sizing: border-box;
+    width: max-content;
+    max-width: 500px;
+    margin: 1rem auto;
+
+    & * {
+        box-sizing: border-box;
+    }
+
+    .dash-signature-media {
+
+        height: 150px;
+        width: 150px;
+        background: linear-gradient(#222, var(--dash-accent), var(--dash-accent-dark));
+        border: 10px solid var(--border1-c);
+        outline: 1px solid color-mix(in srgb, var(--border1-c), var(--text) 10%);
+        padding: 0;
+        margin: 0;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            filter: grayscale(1) brightness(150%);
+            mix-blend-mode: multiply;
+
+        }
+    }
+
+    .dash-signature-prose {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: -50px;
+        position: relative;
+
+
+        .dash-signature-title {
+            font: 5rem var(--dash-deco);
+        }
+
+        .dash-signature-subtitle {
+            display: flex;
+            flex-direction: column;
+            gap: .15rem;
+            text-transform: uppercase;
+            font: .65rem monospace;
+
+            span {
+                width: max-content;
+                background: var(--dash-accent-darker);
+                padding: .15rem .5rem;
+            }
+        }
+    }
+
+}
