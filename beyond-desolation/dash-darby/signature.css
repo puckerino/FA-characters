@@ -57,6 +57,7 @@
 
         .dash-signature-title {
             font: 5rem var(--dash-deco);
+            color: #eee;
         }
 
         .dash-signature-subtitle {
