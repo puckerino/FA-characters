@@ -15,6 +15,7 @@
     --dash-accent-dark: color-mix(in srgb, var(--dash-accent), #222 50%);
     --dash-accent-darker: color-mix(in srgb, var(--dash-accent), #222 80%);
     --dash-text: #eee;
+    --dash-border: 1px solid color-mix(in srgb, var(--border1-c), var(--text) 10%);
 }
 
 .dash-cronologia {
@@ -24,7 +25,7 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 2rem;
-    border: 1px solid var(--border1-c);
+    border: var(--dash-border);
 
     & * {
         box-sizing: border-box;
@@ -47,16 +48,14 @@
             width: 200px;
             background: var(--group);
             position: absolute;
-            bottom: 0;
-            left: 0;
+            bottom: 1px;
+            left: 1px;
         }
 
         .dash-cronologia-img {
             height: 200px;
             object-fit: contain;
             position: relative;
-
-
         }
 
 
@@ -65,6 +64,7 @@
             margin: 0;
             font: 5rem var(--dash-deco);
             line-height: 1;
+            color: var(--dash-text);
         }
     }
 
@@ -78,8 +78,8 @@
             font: 2rem var(--dash-deco2);
             text-transform: uppercase;
             letter-spacing: .2ch;
-            border-top: 1px solid color-mix(in srgb, var(--border1-c), var(--text) 10%);
-            border-bottom: 1px solid color-mix(in srgb, var(--border1-c), var(--text) 10%);
+            border-top: var(--dash-border);
+            border-bottom: var(--dash-border);
             padding: 1rem 2rem;
             background: var(--border1-c);
             line-height: 1;
@@ -133,6 +133,7 @@
                 @container style(--tema: abierto) {
                     --tema-bkg: var(--group);
                     content: "\e620";
+                    color: color-mix(in srgb, var(--group), var(--dash-text) 50%);
                 }
 
                 @container style(--tema: cerrado) {
@@ -147,16 +148,17 @@
                 grid-area: title;
                 color: var(--dash-text);
                 text-decoration: none;
-                font: bold 1rem "Work Sans";
+                font: bold 1rem var(--f-body);
                 text-transform: uppercase;
                 align-self: end;
+                color: var(--dash-text);
             }
 
             span {
                 grid-area: data;
                 display: flex;
                 align-items: center;
-                font: .65rem monospace;
+                font: .65rem var(--f-mono);
                 text-transform: uppercase;
                 color: var(--subtitle);
 
