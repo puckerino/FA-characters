@@ -3,8 +3,14 @@
     src: url(https://puckerino.github.io/FA-characters/beyond-desolation/dash-darby/assets/selincah.otf);
 }
 
+@font-face {
+  font-family: "Bootzy";
+  src: url(https://puckerino.github.io/FA-characters/beyond-desolation/dash-darby/assets/BootzyTM.ttf);
+}
+
 .dash {
     --dash-deco: "Selincah";
+    --dash-deco2: "Bootzy";
     --dash-accent: #9e580c;
     --dash-accent-dark: color-mix(in srgb, var(--dash-accent), #222 50%);
     --dash-accent-darker: color-mix(in srgb, var(--dash-accent), #222 80%);
@@ -12,8 +18,6 @@
 }
 
 .dash-post {
-    --group: #9e580c;
-    --group-light: #9E580C;
     box-sizing: border-box;
     width: 65%;
     margin: 0 auto;
@@ -64,7 +68,7 @@
         grid-area: title;
         padding: 0;
         margin: 0;
-        font: 3rem var(--dash-deco);
+        font: 3rem var(--dash-deco2);
         line-height: .8;
         display: flex;
         flex-direction: column;
