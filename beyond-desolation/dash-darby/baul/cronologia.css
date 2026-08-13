@@ -56,6 +56,7 @@
             height: 200px;
             object-fit: contain;
             position: relative;
+            place-self: end;
         }
 
 
@@ -65,6 +66,8 @@
             font: 5rem var(--dash-deco);
             line-height: 1;
             color: var(--dash-text);
+            width: 100%;
+            text-fit: grow;
         }
     }
 
@@ -133,7 +136,7 @@
                 @container style(--tema: abierto) {
                     --tema-bkg: var(--group);
                     content: "\e620";
-                    color: color-mix(in srgb, var(--group), var(--dash-text) 50%);
+                    color: var(--dash-text);
                 }
 
                 @container style(--tema: cerrado) {
