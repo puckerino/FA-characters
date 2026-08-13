@@ -1,0 +1,100 @@
+@font-face {
+    font-family: "Selincah";
+    src: url(https://puckerino.github.io/FA-characters/beyond-desolation/dash-darby/assets/selincah.otf);
+}
+
+.dash {
+    --dash-deco: "Selincah";
+    --dash-accent: #9e580c;
+    --dash-accent-dark: color-mix(in srgb, var(--dash-accent), #222 50%);
+    --dash-accent-darker: color-mix(in srgb, var(--dash-accent), #222 80%);
+    --dash-text: #eee;
+}
+
+.dash-post {
+    --group: #9e580c;
+    --group-light: #9E580C;
+    box-sizing: border-box;
+    width: 65%;
+    margin: 0 auto;
+    background: var(--dbckg1);
+    padding: 2rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-areas: "data" "title" "prose";
+
+    &:has(.dash-banner) {
+        grid-template-columns: 200px 1fr;
+        grid-template-areas: "banner data" "banner title" "prose prose";
+    }
+
+    @media(max-width: 700px) {
+        width: 100%;
+    }
+
+    & * {
+        box-sizing: border-box;
+    }
+
+    br {
+        display: none;
+    }
+
+    .dash-banner {
+        grid-area: banner;
+        object-fit: cover;
+        aspect-ratio: 1;
+        width: 100%;
+        height: auto;
+        border: 10px solid var(--border1-c);
+        outline: 1px solid var(--group);
+    }
+
+    &:before {
+        grid-area: data;
+        content: attr(lugar) ", " attr(fecha)". CON " attr(pjs);
+        font: .65rem monospace;
+        border-top: 1px solid var(--group);
+        padding-top: .5rem;
+        color: var(--subtitle);
+        text-transform: uppercase;
+    }
+
+    h2 {
+        grid-area: title;
+        padding: 0;
+        margin: 0;
+        font: 3rem var(--dash-deco);
+        line-height: .8;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dash-post-prose {
+        grid-area: prose;
+        text-align: balance;
+        font: var(--fset-body1);
+        line-height: 1.5rem;
+        color: var(--dash-text);
+
+        br {
+            display: block;
+        }
+
+        strong,
+        n {
+            font-weight: bold;
+            color: color-mix(in srgb, var(--group), #eee 40%);
+        }
+
+        h3 {
+            background: var(--group);
+            margin: 0;
+            font: bold .75rem "Open Sans";
+            text-transform: uppercase;
+            width: max-content;
+            padding: .15rem .5rem;
+            letter-spacing: .2ch;
+        }
+    }
+}
