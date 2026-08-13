@@ -1,1 +1,169 @@
+@font-face {
+    font-family: "Selincah";
+    src: url(https://puckerino.github.io/FA-characters/beyond-desolation/dash-darby/assets/selincah.otf);
+}
 
+@font-face {
+    font-family: "Bootzy";
+    src: url(https://puckerino.github.io/FA-characters/beyond-desolation/dash-darby/assets/BootzyTM.ttf);
+}
+
+.dash {
+    --dash-deco: "Selincah";
+    --dash-deco2: "Bootzy";
+    --dash-accent: #9e580c;
+    --dash-accent-dark: color-mix(in srgb, var(--dash-accent), #222 50%);
+    --dash-accent-darker: color-mix(in srgb, var(--dash-accent), #222 80%);
+    --dash-text: #eee;
+}
+
+.dash-cronologia {
+    width: 100%;
+    background-color: var(--dbckg1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    border: 1px solid var(--border1-c);
+
+    & * {
+        box-sizing: border-box;
+    }
+
+    br {
+        display: none;
+    }
+
+    hgroup {
+        margin: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+
+        &:before {
+            content: "";
+            height: 150px;
+            width: 200px;
+            background: var(--group);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .dash-cronologia-img {
+            height: 200px;
+            object-fit: contain;
+            position: relative;
+
+
+        }
+
+
+        h2 {
+            padding: 2rem;
+            margin: 0;
+            font: 5rem var(--dash-deco);
+            line-height: 1;
+        }
+    }
+
+    .mes {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        &:before {
+            content: attr(month);
+            font: 2rem var(--dash-deco2);
+            text-transform: uppercase;
+            letter-spacing: .2ch;
+            border-top: 1px solid color-mix(in srgb, var(--border1-c), var(--text) 10%);
+            border-bottom: 1px solid color-mix(in srgb, var(--border1-c), var(--text) 10%);
+            padding: 1rem 2rem;
+            background: var(--border1-c);
+            line-height: 1;
+            margin-bottom: 1rem;
+
+        }
+
+        article {
+            width: 95%;
+            margin: 0 auto;
+            border: 1px solid color-mix(in srgb, #222, #eee 5%);
+            padding: .5rem;
+            display: grid;
+            grid-template-columns: 50px 50px 1fr;
+            grid-template-rows: repeat(2, max-content);
+            grid-template-areas: "icon date title" "icon date data";
+            background: color-mix(in srgb, var(--dbckg1), #eee 2%);
+            border-radius: .25rem;
+            corner-shape: squircle;
+
+            &[status="abierto"] {
+                --tema: abierto;
+                border: 1px solid color-mix(in srgb, var(--group), transparent 50%);
+            }
+
+            &[status="cerrado"] {
+                --tema: cerrado;
+            }
+
+            &:before {
+                grid-area: date;
+                content: attr(fecha);
+                font: 1.5rem var(--dash-deco2);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &:after {
+                grid-area: icon;
+                aspect-ratio: 1;
+                background: var(--tema-bkg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: "Phosphor" !important;
+                border-radius: .25rem;
+                corner-shape: squircle;
+
+
+                @container style(--tema: abierto) {
+                    --tema-bkg: var(--group);
+                    content: "\e620";
+                }
+
+                @container style(--tema: cerrado) {
+                    --tema-bkg: #222;
+                    content: "\e308";
+
+                }
+
+            }
+
+            a {
+                grid-area: title;
+                color: var(--dash-text);
+                text-decoration: none;
+                font: bold 1rem "Work Sans";
+                text-transform: uppercase;
+                align-self: end;
+            }
+
+            span {
+                grid-area: data;
+                display: flex;
+                align-items: center;
+                font: .65rem monospace;
+                text-transform: uppercase;
+                color: var(--subtitle);
+
+                &:before {
+                    content: attr(lugar) " — " attr(pjs);
+                }
+            }
+        }
+    }
+}
