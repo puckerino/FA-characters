@@ -34,39 +34,41 @@
     display: none;
   }
 
-  hgroup {
-    margin: 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-
-    
-    &:before {
-        content: "";
-        height: 150px;
-        width: 200px;
-        background: var(--group);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
-
-    .dash-relaciones-img {
-      height: 200px;
-      object-fit: contain;
-      position: relative;
+    hgroup {
+        margin: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
 
 
+        &:before {
+            content: "";
+            height: 150px;
+            width: 200px;
+            background: var(--group);
+            position: absolute;
+            bottom: 1px;
+            left: 1px;
+        }
+
+        .dash-relaciones-img {
+            height: 200px;
+            object-fit: contain;
+            position: relative;
+            place-self: end;
+        }
+
+
+        h2 {
+            padding: 2rem;
+            margin: 0;
+            font: 5rem var(--dash-deco);
+            line-height: 1;
+            color: var(--dash-text);
+            width: 100%;
+            text-fit: grow;
+        }
     }
-
-
-    h2 {
-      padding: 2rem;
-      margin: 0;
-      font: 5rem var(--dash-deco);
-      line-height: 1;
-    }
-  }
 
   .dash-relaciones-wrap {
     display: grid;
