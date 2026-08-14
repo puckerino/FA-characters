@@ -15,6 +15,7 @@
   --dash-accent-dark: color-mix(in srgb, var(--dash-accent), #222 50%);
   --dash-accent-darker: color-mix(in srgb, var(--dash-accent), #222 80%);
   --dash-text: #eee;
+  --dash-border: 1px solid color-mix(in srgb, var(--border1-c), var(--text) 10%);
 }
 
 .dash-relaciones {
