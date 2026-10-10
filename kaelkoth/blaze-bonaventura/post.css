@@ -1,1 +1,292 @@
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 100 700;
+    src: url(https://fonts.gstatic.com/l/font?kit=kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsLjBuVYLALbrsksXKM8m9Jkc-DjPCE&skey=b8dc2088854b122f&v=v377) format('woff2');
+}
 
+
+@font-face {
+    font-family: Choire;
+    src: url(https://puckerino.github.io/kaelkoth/blaze-bonaventura/Choire-Regular.ttf) format('truetype');
+}
+
+/* ==============================================
+GENERAL
+=============================================== */
+
+.blaze {
+    --f-deco: Choire;
+    --f-text: 'Gideon Roman';
+    --text: #abaaaa;
+    --text-elevated: color-mix(in srgb, var(--text), white 10%);
+    --text-muted: var(--dbckg5);
+    --groups: var(--alianza);
+    --groups-darker: color-mix(in srgb, var(--groups), var(--dark) 20%);
+    --border: #2e2e2e97;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    color: var(--text);
+    font: 16px var(--f-text);
+    box-sizing: border-box;
+    /* ============================================
+    RESET 
+    ============================================= */
+
+
+    * {
+        box-sizing: border-box;
+    }
+
+    br {
+        display: none;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        padding: 0;
+        margin: 0;
+        line-height: inherit;
+        text-box: trim-both cap alphabetic;
+    }
+
+    section,
+    article,
+    hgroup,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    a,
+    a:visited {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    figure {
+        padding: 0;
+        margin: 0;
+
+        &.cover {
+            img {
+                object-fit: cover;
+                min-height: 0;
+                min-width: 0;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+/* ==============================================
+POST
+=============================================== */
+
+.blaze-post {
+
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+
+
+    /* ============================================
+    POST HEADER 
+    ============================================= */
+
+    hgroup {
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+        &>*:not(figure) {
+            position: relative;
+        }
+
+        figure {
+            grid-area: img;
+        }
+
+        h2 {
+            grid-area: titulo;
+            font: 3rem var(--f-deco);
+            line-height: .8;
+
+            &.group-gradient {
+                background: -webkit-linear-gradient(90deg, var(--groups) 0%, var(--groups-darker) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke: .5px #000;
+                text-shadow: 1px 1px 1px transparent;
+            }
+        }
+
+        .fecha {
+            grid-area: fecha;
+        }
+
+        .lugar {
+            grid-area: lugar;
+        }
+
+        .pjs {
+            grid-area: pjs;
+        }
+
+        .fecha,
+        .lugar {
+            font: .7rem var(--f-text);
+            text-transform: uppercase;
+            letter-spacing: .2ch;
+        }
+
+        &.standard {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: "fecha lugar" "titulo titulo" "pjs pjs";
+            gap: 1rem;
+
+            h2 {
+                text-align: center;
+                padding: 2rem 0;
+            }
+
+            .lugar {
+                text-align: right;
+            }
+
+            .fecha, .lugar {
+                color: var(--text-muted);
+            }
+
+            .pjs {
+                font: .7rem var(--f-text); 
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: .5rem;
+
+                &:before, &:after {
+                    content: "";
+                    height: 1px;
+                    min-width: 20%;
+                    flex-grow: 1;
+                    background: var(--groups-darker);
+                }
+            }
+        }
+    }
+
+
+    /* ============================================
+    TRIGGERS 
+    ============================================= */
+
+
+    .triggers {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        &:before {
+            content: "TRIGGER WARNINGS";
+            background: color-mix(in srgb, var(--groups), transparent 50%);
+            border-radius: 999px;
+            padding: .25rem .5rem;
+            font: .7rem var(--f-text);
+            outline: 1px solid var(--groups-darker);
+            outline-offset: 2px;
+        }
+
+    }
+
+    /* ============================================
+    PROSA 
+    ============================================= */
+
+    .prose {
+        line-height: 150%;
+        text-align: justify;
+
+        &::first-letter {
+            font: 5rem var(--f-deco);
+            float: left;
+            margin-right: 1rem;
+            color: var(--groups);
+        }
+
+        strong {
+            color: var(--groups);
+        }
+
+        br {
+            display: block;
+        }
+
+        blockquote+br,
+        ul+br,
+        ol+br {
+            display: none;
+        }
+
+
+        blockquote {
+            padding: 2rem;
+            margin-block-start: 0 !important;
+            margin-block-end: 0 !important;
+            margin-inline-start: 0 !important;
+            margin-inline-end: 0 !important;
+            unicode-bidi: isolate;
+            border: 1px solid var(--groups-darker);
+            border-radius: 1rem;
+            corner-shape: scoop;
+            background: var(--dbckg2);
+        }
+
+        ul,
+        ol {
+            margin: 0;
+            padding: 0 2rem;
+
+            br {
+                display: none;
+            }
+
+            li {
+                line-height: 120%;
+                margin-bottom: .5rem;
+
+                &::marker {
+                    color: var(--groups);
+                }
+
+                ul & {
+                    &::marker {
+                        content: "✦ ";
+                    }
+                }
+
+                ol & {
+                    &::marker {
+                        font: 1.5rem var(--f-deco);
+                        line-height: .8;
+                        text-box: trim-both cap alphabetic;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+}
