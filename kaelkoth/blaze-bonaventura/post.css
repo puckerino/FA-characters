@@ -21,7 +21,6 @@ GENERAL
     --text: #abaaaa;
     --text-elevated: color-mix(in srgb, var(--text), white 10%);
     --text-muted: var(--dbckg5);
-    --groups: var(--alianza);
     --groups-darker: color-mix(in srgb, var(--groups), var(--dark) 20%);
     --border: #2e2e2e97;
     width: 100%;
