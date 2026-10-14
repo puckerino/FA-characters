@@ -11,12 +11,18 @@
     src: url(https://puckerino.github.io/FA-characters/kaelkoth/blaze-bonaventura/Choire-Regular.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: Rothenburg;
+    src: url(https://puckerino.github.io/FA-characters/kaelkoth/blaze-bonaventura/assets/RothenburgDecorative.ttf) format('truetype');
+}
+
 /* ==============================================
 GENERAL
 =============================================== */
 
 .blaze {
     --f-deco: Choire;
+    --f-deco-2: Rothenburg;
     --f-text: 'Gideon Roman';
     --text: #abaaaa;
     --text-elevated: color-mix(in srgb, var(--text), white 10%);
