@@ -284,7 +284,7 @@ GENERAL
         }
     }
 
-    h3 + article, h3 + br + article {
+    h3 + article, h3 + br + article, h3 + br + br + article {
         border-top: 1px solid var(--border);
     }
 }
