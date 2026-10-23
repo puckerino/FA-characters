@@ -1,4 +1,15 @@
+.KAflexavaypost:has(.blaze-cronologia) {
+    .KApostbody {
+        width: 100%;
+    }
+    .KApostprofile, .postprofile {
+        display: none;
+    }
+}
 
+.KApostbody:has(.blaze-wide) {
+    margin: 0 !important;
+}
 /* ==============================================
 GENERAL
 =============================================== */
