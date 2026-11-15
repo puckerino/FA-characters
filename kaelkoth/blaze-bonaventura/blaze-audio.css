@@ -12,10 +12,9 @@
     gap: 0;
 
     .control-btn {
-      height: 40px;
-      width: 40px;
+      height: 30px;
+      width: 30px;
       aspect-ratio: 1;
-      padding: .5rem;
       background: color-mix(in sgb, var(--groups), transparent 20%);
       color: var(--predet);
     }
