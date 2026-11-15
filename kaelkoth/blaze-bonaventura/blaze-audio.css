@@ -18,7 +18,7 @@
 
 .blaze-audio {
   box-sizing: border-box;
-  gap: .25rem;
+  gap: .25rem 1rem;
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-template-rows: repeat(2,max-content);
