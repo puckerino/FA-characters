@@ -15,7 +15,7 @@
       height: 30px;
       width: 30px;
       aspect-ratio: 1;
-      background: color-mix(in sgb, var(--groups), transparent 20%);
+      background: color-mix(in srgb, var(--groups), transparent 20%);
       color: var(--predet);
     }
   }
