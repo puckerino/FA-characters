@@ -1,4 +1,13 @@
 .blaze-playlist {
+  box-sizing: border-box;
+
+    *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  br {
+    display: none;
+  }
 
   .blaze-songs {
     display: flex;
@@ -12,6 +21,14 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+
+    *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  br {
+    display: none;
+  }
 
   .reproductor-mini {
     width: max-content;
@@ -35,11 +52,5 @@
     
   }
 
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
 
-  br {
-    display: none;
-  }
 }
