@@ -1,3 +1,16 @@
+.KAflexavaypost:has(.ka-inventario) {
+    .KApostbody {
+        width: 100%;
+    }
+    .KApostprofile, .postprofile {
+        display: none;
+    }
+}
+
+.KApostbody:has(.ka-inventario) {
+    margin: 0 !important;
+}
+
 .ka-inventario {
     --groups-darker: color-mix(in srgb, var(--groups), black 20%);
     --groups-lighter: color-mix(in srgb, var(--groups), white 20%);
