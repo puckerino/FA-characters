@@ -1,3 +1,63 @@
+@font-face {
+    font-family: "Dark Whisper";
+    src: url('https://FURRALOCA.github.io/kaelkothpejotas/recursos/DarkWhisperRegular-rvPdp.woff2');
+}
+
+@font-face {
+    font-family: "Decorative1";
+    src: url('https://FURRALOCA.github.io/kaelkothpejotas/recursos/Ornaments Salad.otf');
+}
+
+@font-face {
+    font-family: 'Highborne';
+    src: url('https://furraloca.github.io/kaelkothoficial/Highborne-Blackletter.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Menttalis';
+    src: url('https://furraloca.github.io/kaelkothoficial/Menttalis.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "Metrim";
+    src: url('https://FURRALOCA.github.io/kaelkothpejotas/recursos/MetrimLetterRegular.otf');
+}
+
+@font-face {
+    font-family: 'Revolver';
+    src: url('https://dl.dropbox.com//scl/fi/cu2ndj95j48hgzymvm2jx/RevolverBlackletter-Regular.otf?rlkey=r06cgm9o31ek5z44vlpoevx75&st=79lj6hai&dl=0') format('opentype');
+}
+
+@font-face {
+    font-family: 'UnifrakturMaguntia';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/unifrakturmaguntia/v20/WWXPlieVYwiGNomYU-ciRLRvEmK7oaVemGZM.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Acinonyx Jubatus';
+    src: url(https://raw.githubusercontent.com/kaelkoth/fonts/main/AcinonyxJubatus.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aquiline Two';
+    src: url(https://raw.githubusercontent.com/kaelkoth/fonts/main/AquilineTwo.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Considered Connected Demo';
+    src: url(https://raw.githubusercontent.com/kaelkoth/fonts/main/Considered_Connected_Demo[1].otf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .KAflexavaypost:has(.ka-inventario) {
     .KApostbody {
         width: 100%;
