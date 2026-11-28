@@ -1,0 +1,240 @@
+.ka-inventario {
+    --groups-darker: color-mix(in srgb, var(--groups), black 20%);
+    --groups-lighter: color-mix(in srgb, var(--groups), white 20%);
+    font: 1rem 'Gideon Roman';
+    box-sizing: border-box;
+    overflow: clip;
+
+    margin: 0 auto;
+    width: 979px;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    hgroup {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        width: 100%;
+        position: relative;
+
+        &:before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: var(--header-background);
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(1) brightness(.5) contrast(.6);
+            opacity: .6;
+            mask-image: linear-gradient(to bottom, black, transparent);
+
+        }
+
+        h2 {
+            font: 4rem var(--header-title);
+            color: var(--predet);
+            position: relative;
+
+            @container style(--header-title: 'Considered Connected Demo') {
+                text-transform: uppercase;
+            }
+
+            @media(width < 700px) {
+                font: 2rem var(--header-title);
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        .header-img {
+            position: relative;
+
+            img {
+                object-fit: cover;
+                height: 150px;
+                width: 150px;
+                mask-image: url(https://i.imgur.com/hi4EU41.png);
+                mask-size: 100% 100%;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: var(--groups);
+                mask-image: url(https://i.imgur.com/YI6I9n6.png);
+                mask-size: 100% 100%;
+                z-index: 2;
+            }
+
+            @media(width < 700px) {
+                display: none;
+            }
+        }
+    }
+
+    h3 {
+        font: 2rem 'Cinzel';
+        color: var(--predet);
+        background-color: var(--dbckg2);
+        background-image: radial-gradient(ellipse farthest-side at left top, var(--groups-darker) 0%, transparent 100%);
+
+        display: flex;
+        align-items: center;
+
+        padding: 1rem 2rem;
+        border-top: 1px solid var(--dbckg4);
+        border-bottom: 1px solid var(--dbckg4);
+
+        @media(width < 700px) {
+            font: 1rem 'Cinzel';
+            justify-content: center;
+            width: 100%;
+        }
+
+    }
+}
+
+.ka-inventario-list {
+
+    gap: 1rem;
+    padding: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: max-content;
+
+    article {
+        border: 1px solid var(--dbckg4);
+        background: color-mix(in srgb, var(--dbckg1), transparent 60%);
+        display: grid;
+        grid-template-rows: subgrid;
+        grid-row: span 3;
+        grid-template-columns: 1rem 1fr 1rem;
+        grid-template-areas:
+            ". img ."
+            ". titulo . "
+            "desc desc desc";
+        gap: 0;
+        padding-top: 1rem;
+
+        .imagen {
+            --imgsize: 150px;
+            grid-area: img;
+            width: var(--imgsize);
+            height: var(--imgsize);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border: 1px solid var(--groups-darker);
+            background: linear-gradient(var(--dbckg4), var(--dark));
+            background-size: cover;
+            place-self: center;
+            border-radius: 1rem;
+            corner-shape: notch;
+            transition: all .3s ease-in-out;
+
+
+            &:before {
+                content: "";
+                height: 90%;
+                width: 90%;
+                position: absolute;
+                top: 5%;
+                left: 5%;
+                border: 1px solid var(--groups-darker);
+                transform: rotate(45deg);
+                filter: drop-shadow(0 0 0.75rem var(--groups-darker));
+                opacity: .8;
+            }
+
+            img {
+                object-fit: cover;
+                min-width: 0;
+                min-height: 0;
+                width: 100%;
+                height: 100%;
+                place-self: center;
+                border-radius: 1rem;
+                corner-shape: notch;
+
+                transition: all .3s ease-in-out;
+
+                .transparente & {
+                    object-fit: contain;
+                    height: 80%;
+                    filter: drop-shadow(0 0 0.75rem var(--groups-darker));
+                }
+
+
+            }
+
+            &.transparente:hover {
+                transition: all .3s ease-in-out;
+
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        h4 {
+            grid-area: titulo;
+            position: relative;
+            z-index: 2;
+            font: 2rem var(--card-title);
+            color: var(--predet);
+            line-height: 1;
+            text-align: center;
+            place-self: center;
+            filter: drop-shadow(1px 1px 1px var(--groups));
+            margin: 2rem auto;
+        }
+
+        span {
+            grid-area: img;
+            justify-self: center;
+            align-self: end;
+            margin-bottom: -.75lh;
+            width: max-content;
+            height: max-content;
+            font: .65rem 'Gideon Roman';
+            text-transform: uppercase;
+            padding: .25rem 1rem;
+            background: linear-gradient(to bottom, var(--groups), var(--groups-lighter));
+            border-radius: 999px;
+            corner-shape: bevel;
+            color: var(--predet);
+            z-index: 2;
+            text-align: center;
+            letter-spacing: 5px;
+        }
+
+        .prose {
+            grid-area: desc;
+            text-align: justify;
+            line-height: 1.25;
+            text-align-last: center;
+            font-size: .85rem;
+            width: 100%;
+            padding: 1rem;
+            position: relative;
+            background: linear-gradient(to bottom, transparent, var(--dbckg1));
+            border-top: 1px solid var(--dbckg4);
+
+            br:not(:first-of-type) {
+                display: block;
+            }
+        }
+    }
+}
